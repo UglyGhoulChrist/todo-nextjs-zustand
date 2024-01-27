@@ -24,3 +24,10 @@ http://localhost:3000 - open with your browser to see the result
 - yarn create next-app todo-nextjs-zustand
 - cd todo-nextjs-zustand
 - code .
+
+## Created branch
+
+- git branch develop
+- git checkout develop
+- git branch feature/todo
+- git checkout feature/todo

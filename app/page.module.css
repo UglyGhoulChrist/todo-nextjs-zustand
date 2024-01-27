@@ -1,7 +1,15 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 100vh;
+    max-width: 768px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+        gap: 3rem;
+    }
+}
+
+.h1,
+.h2 {
+    text-align: center;
 }
