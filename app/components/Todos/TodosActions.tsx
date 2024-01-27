@@ -1,27 +1,26 @@
 import { RiDeleteBin2Line, RiRefreshLine } from 'react-icons/ri'
 import Button from '@/app/components/UI/Button'
 import styles from '@/app/components/Todos/TodosActions.module.css'
+import { useTodoList } from '@/stores/stores'
 
-type Props = {
-    onClickReset: () => void,
-    onClickClearCompleted: () => void,
-    completedTodoCount: number,
-}
+function TodosActions(): JSX.Element {
 
-function TodosActions({ onClickReset, onClickClearCompleted, completedTodoCount }: Props): JSX.Element {
+    const deleteAllTodo = useTodoList(state => state.deleteAllTodo)
+    const deleteCompletedTodo = useTodoList(state => state.deleteCompletedTodo)
+    const lengthCompletedTodo: number = useTodoList(state => state.todoList.filter(todo => todo.completed).length)
 
     return (
 
         <div className={styles.buttons}>
             <Button
-                onClick={onClickReset}
+                onClick={deleteAllTodo}
                 title='Удалить все задачи'>
                 <RiDeleteBin2Line />
             </Button>
             <Button
-                disabled={completedTodoCount === 0}
+                disabled={lengthCompletedTodo === 0}
                 title='Удалить завершённые задачи'
-                onClick={onClickClearCompleted}
+                onClick={deleteCompletedTodo}
             >
                 <RiRefreshLine />
             </Button>

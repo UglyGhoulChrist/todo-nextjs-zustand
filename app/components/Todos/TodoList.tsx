@@ -1,14 +1,12 @@
 import styles from '@/app/components/Todos/TodoList.module.css'
 import Todo from '@/app/components/Todos/Todo'
 import { ITodo } from '@/interfaces/interfaces'
+import { useTodoList } from '@/stores/stores'
 
-type Props = {
-    todos: ITodo[],
-    deleteTodo: (id: string) => void,
-    checkTodo: (id: string) => void,
-}
 
-function TodoList({ todos, deleteTodo, checkTodo }: Props): JSX.Element {
+function TodoList(): JSX.Element {
+
+    const todos: ITodo[] = useTodoList((state) => state.todoList)
 
     return (
 
@@ -19,8 +17,6 @@ function TodoList({ todos, deleteTodo, checkTodo }: Props): JSX.Element {
                     <Todo
                         todo={todo}
                         key={todo.id}
-                        deleteTodo={deleteTodo}
-                        checkTodo={checkTodo}
                     />
                 ))
                 :

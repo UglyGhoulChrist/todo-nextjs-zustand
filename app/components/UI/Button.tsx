@@ -8,7 +8,7 @@ type Props = {
     disabled?: boolean,
 }
 
-function Button({ onClick, children, title, disabled = false }: Props): JSX.Element {
+function Button({ text, onClick, children, title, disabled = false }: Props): JSX.Element {
 
     return (
 
@@ -19,7 +19,7 @@ function Button({ onClick, children, title, disabled = false }: Props): JSX.Elem
             onClick={onClick}
             disabled={disabled}
         >
-            {children}
+            {children}{text}
         </button>
     )
 }

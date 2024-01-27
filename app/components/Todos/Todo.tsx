@@ -3,14 +3,16 @@ import { FaCheck } from 'react-icons/fa'
 import styles from '@/app/components/Todos/Todo.module.css'
 import { clsx } from 'clsx'
 import { ITodo } from '@/interfaces/interfaces'
+import { useTodoList } from '@/stores/stores'
 
 type Props = {
     todo: ITodo,
-    deleteTodo: (id: string) => void,
-    checkTodo: (id: string) => void,
 }
 
-function Todo({ todo, deleteTodo, checkTodo }: Props): JSX.Element {
+function Todo({ todo }: Props): JSX.Element {
+
+    const deleteTodo = useTodoList(state => state.deleteTodo)
+    const checkTodo = useTodoList(state => state.checkTodo)
 
     return (
 

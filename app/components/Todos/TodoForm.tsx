@@ -1,20 +1,19 @@
 import { useState } from 'react'
 import styles from '@/app/components/Todos/TodoForm.module.css'
 import Button from '@/app/components/UI/Button'
+import { useTodoList } from '@/stores/stores'
 
-type Props = {
-    addTodo: (text: string) => void,
-}
-
-function TodoForm({ addTodo }: Props): JSX.Element {
+function TodoForm(): JSX.Element {
 
     const [text, setText] = useState<string>('')
 
     function onSubmitHandler(event: { preventDefault: () => void }): void {
         event.preventDefault()
-        text && addTodo(text)
+        addTodo(text)
         setText('')
     }
+
+    const addTodo = useTodoList((state) => state.addTodo)
 
     return (
 
