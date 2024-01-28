@@ -33,3 +33,13 @@ http://localhost:3000 - open with your browser to see the result
 - git checkout feature/todo
 - git branch feature/zustand
 - git checkout feature/zustand
+- git branch feature/persist-localStorage
+- git checkout feature/persist-localStorage
+
+- git checkout develop
+- git merge feature/todo
+- git merge feature/zustand
+- git merge feature/persist-localStorage
+
+- git checkout main
+- git merge develop

@@ -13,8 +13,8 @@ const metadata: Metadata = {
     icons: {
         icon: [
             {
-                url: '/public/favicon.ico',
-                href: '/public/favicon.ico',
+                url: '/favicon.ico',
+                href: '/favicon.ico',
             }]
     },
 }

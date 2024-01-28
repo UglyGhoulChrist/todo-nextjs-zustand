@@ -17,3 +17,4 @@
 
 - NextJS
 - Zustand
+    - persist localStorage
