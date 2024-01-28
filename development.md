@@ -2,8 +2,8 @@
 
 ## Ссылки:
 
-[Code on GitHub](https://...)    
-[Проект на платформе Vercel](https://...)
+[Code on GitHub](https://github.com/UglyGhoulChrist/todo-nextjs-zustand.git)    
+[Проект на платформе Vercel](https://todo-nextjs-zustand.vercel.app/)
 
 ## Ветки Git:
 
